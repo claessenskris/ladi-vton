@@ -1,7 +1,8 @@
-accelerator
+accelerate
 diffusers==0.14.0
 transformers
 clean-fid
+torchmetrics
+
 opencv-python
 sudo apt-get install libxext6
-torchmetrics
