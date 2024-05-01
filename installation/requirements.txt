@@ -1,10 +1,10 @@
 torch==2.1.0 torchvision==0.16.0 --index-url https://download.pytorch.org/whl/cu118
 
-accelerate==0.29.2
+accelerate==0.18.0
 diffusers==0.14.0
-transformers==4.39.3
+transformers==4.27.3
 clean-fid==0.1.35
-torchmetrics
+torchmetrics[image]==0.11.4
 
-opencv-python
+opencv-python==4.7.0.72
 sudo apt-get install libxext6
