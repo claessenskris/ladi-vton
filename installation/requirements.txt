@@ -2,7 +2,7 @@ torch==2.1.0 torchvision==0.16.0 --index-url https://download.pytorch.org/whl/cu
 
 accelerate==0.29.2
 diffusers==0.14.0
-transformers==4.25.1
+transformers==4.39.3
 clean-fid==0.1.35
 torchmetrics
 
