@@ -9,5 +9,8 @@ torchmetrics[image]==0.11.4
 opencv-python==4.7.0.72
 sudo apt-get install libxext6
 
+--upgrade google-api-python-client
+--upgrade google-cloud-storage
+
 --index-url https://download.pytorch.org/whl/cu118
 pip install torch==2.0.1 torchvision==0.15.2 opencv-python==4.7.0.72 diffusers==0.14.0 transformers==4.27.3 accelerate==0.18.0 clean-fid==0.1.35 torchmetrics[image]==0.11.4 wandb==0.14.0 matplotlib==3.7.1 tqdm xformers --index-url https://download.pytorch.org/whl/cu118
