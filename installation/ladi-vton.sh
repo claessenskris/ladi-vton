@@ -1,8 +1,15 @@
+#!/bin/bash
 gcsfuse --implicit-dirs image_generator_request /pascalem/_pyt/ladi-vton/data
 
 cd /pascalem
 
 source _pyt/bin/activate
+
+# Check if the environment is activated
+if [ -z "$VIRTUAL_ENV" ]; then
+    echo "Virtual environment not activated."
+    exit 1
+fi
 
 cd _pyt/ladi-vton
 
