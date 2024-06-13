@@ -311,12 +311,12 @@ def main():
         ).images
 
         # Save images
-        for gen_image, cat, name, cloth in zip(generated_images, category, batch["im_name"], batch["cloth"]):
+        for gen_image, cat, name, mask in zip(generated_images, category, batch["im_name"], batch['im_mask']):
             if not os.path.exists(os.path.join(save_dir, cat)):
                 os.makedirs(os.path.join(save_dir, cat))
 
             if args.use_png:
-                name = name[:-4]  + '_' + cloth
+                name = name[:-4]  + '_' + mask
                 name = name.replace(".jpg", ".png")
                 gen_image.save(os.path.join(save_dir, cat, name))
             else:
