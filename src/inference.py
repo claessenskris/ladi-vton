@@ -311,17 +311,17 @@ def main():
         ).images
 
         # Save images
-        for gen_image, cat, name in zip(generated_images, category, batch["im_name"]):
+        for gen_image, cat, name, cloth in zip(generated_images, category, batch["im_name"], batch["cloth"]):
             if not os.path.exists(os.path.join(save_dir, cat)):
                 os.makedirs(os.path.join(save_dir, cat))
 
             if args.use_png:
+                name = name[:-4]  + '_' + cloth
                 name = name.replace(".jpg", ".png")
-                gen_image.save(
-                    os.path.join(save_dir, cat, name))
+                gen_image.save(os.path.join(save_dir, cat, name))
             else:
-                gen_image.save(
-                    os.path.join(save_dir, cat, name), quality=95)
+                name = name[:-4]  + '_' + cloth
+                gen_image.save(os.path.join(save_dir, cat, name), quality=95)
 
     # Free up memory
     del val_pipe
