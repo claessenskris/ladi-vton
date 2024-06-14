@@ -152,7 +152,7 @@ def main():
     else:
         category = ['dresses', 'upper_body', 'lower_body']
 
-    outputlist = ['image', 'pose_map', 'inpaint_mask', 'im_mask', 'category', 'im_name', 'cloth']
+    outputlist = ['image', 'pose_map', 'inpaint_mask', 'im_mask', 'category', 'im_name', 'cloth', 'c_name']
     if args.dataset == "dresscode":
         test_dataset = DressCodeDataset(
             dataroot_path=args.dresscode_dataroot,
@@ -311,10 +311,11 @@ def main():
         ).images
 
         # Save images
-        for gen_image, cat, name in zip(generated_images, category, batch["im_name"]):
+        for gen_image, cat, name, c_name in zip(generated_images, category, batch["im_name"], batch["c_name"]):
             if not os.path.exists(os.path.join(save_dir, cat)):
                 os.makedirs(os.path.join(save_dir, cat))
 
+            name.replace(".jpg", "") + "_" + c_name)
             if args.use_png:
                 name = name.replace(".jpg", ".png")
                 gen_image.save(os.path.join(save_dir, cat, name))
