@@ -315,7 +315,7 @@ def main():
             if not os.path.exists(os.path.join(save_dir, cat)):
                 os.makedirs(os.path.join(save_dir, cat))
 
-            name.replace(".jpg", "") + "_" + c_name)
+            name.replace(".jpg", "") + "_" + c_name))
             if args.use_png:
                 name = name.replace(".jpg", ".png")
                 gen_image.save(os.path.join(save_dir, cat, name))
